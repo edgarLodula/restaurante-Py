@@ -1,18 +1,18 @@
-from restaurante import Restaurante
+from modelos.restaurante import Restaurante
+from modelos.cardapio.bebida import Bebida
+from modelos.cardapio.prato import Prato 
 
 novo_restaurante=Restaurante('pizza planet','Pizzaria')
-novo_restaurante.alternar_estado()
-novo_restaurante.receber_avaliacao('Edgar',10)
-novo_restaurante.receber_avaliacao('Carlos',6)
+novo_suco=Bebida('Suco de Melancia',5.0,'Grande')
+novo_suco.desconto()
+novo_prato=Prato('Paozinho',2.0,'Pao na chapa tostado')
+novo_prato.desconto()
+novo_restaurante.adicionar_cardapio(novo_suco)
+novo_restaurante.adicionar_cardapio(novo_prato)
 
-novo_restaurante2=Restaurante('Lindo pão','Padaria')
-novo_restaurante2.alternar_estado()
-novo_restaurante2.receber_avaliacao('Amanda',3)
-novo_restaurante2.receber_avaliacao('Rodrigo',5)
-novo_restaurante2.receber_avaliacao('Maria',10)
 
 def main():
-    Restaurante.listar_restaurantes()
+    novo_restaurante.exibir_cardapio()
 
 if __name__ == '__main__':
     main()
